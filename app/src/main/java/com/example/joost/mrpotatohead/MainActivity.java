@@ -9,6 +9,10 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // arrays containing body parts and booleans for visibility
+    String[] pieces = new String[] {"Hat", "Eyebrows", "Ears", "Glasses", "Eyes",
+            "Nose", "Arms", "Moustache", "Mouth", "Shoes"};
+
     public void checkClicked(View v) {
 
         // store checkbox info in Checkbox object and get name
@@ -31,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        // arrays containing body parts and booleans for visibility
-        String[] pieces = new String[] {"Hat", "Eyebrows", "Ears", "Glasses", "Eyes",
-                                        "Nose", "Arms", "Moustache", "Mouth", "Shoes"};
         boolean[] visibility = new boolean[10];
 
         // check visibility for each body part and set boolean for corresponding index
@@ -59,9 +60,6 @@ public class MainActivity extends AppCompatActivity {
         // don't perform setting of visibility states if no savedInstance state yet
         if (savedInstanceState != null) {
 
-            // arrays containing body parts and booleans for visibility
-            String[] pieces = new String[] {"Hat", "Eyebrows", "Ears", "Glasses", "Eyes",
-                                            "Nose", "Arms", "Moustache", "Mouth", "Shoes"};
             boolean[] visibility = savedInstanceState.getBooleanArray("images");
 
             // set visibility based on boolean made in onSaveInstanceState()
